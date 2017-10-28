@@ -1,0 +1,34 @@
+mixin header
+	header.header
+		.header_in
+			a.logo_link(href="./")
+				img.logo_img(src="i/header-logo.png" alt="logo")
+				.logo_text hiking<span class="accent_mod">trip</span>
+			nav.header_nav
+				ul.header_nav_list
+					li.header_nav_item
+						a.header_nav_link.active_page(href="#") Acasă
+					li.header_nav_item
+						a.header_nav_link(href="#") Servicii
+					li.header_nav_item
+						a.header_nav_link(href="#") Despre noi
+					li.header_nav_item
+						a.header_nav_link(href="#") Cele mai apropiate excursii
+					li.header_nav_item
+						a.header_nav_link(href="#") Galerie
+					li.header_nav_item
+						a.header_nav_link(href="#") Feedback
+					li.header_nav_item
+						a.header_nav_link(href="#") Contacte
+				.select_language
+					+form_element({
+						type: 'select',
+						class_array: language_field,
+						title: '',
+						id: 'language',
+						options: ['Ro', 'En', 'Ru']
+					})
+			.menu_trigger.menuTrigger
+				span.menu_trigger_decor
+mixin footer
+	footer.footer
