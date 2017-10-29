@@ -1,0 +1,172 @@
+.sub_header {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, rgba($black,.5) 0%,rgba($black, 0) 100%);
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	@include bp($point_3, max) {
+		height: 55rem;
+	}
+}
+
+.subheader_bg_wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.subheader_bg_img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.subheader_content {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 10rem;
+	z-index: 2;
+
+	@include bp($point_3, max) {
+		.content_wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+		}
+	}
+
+	@include bp($point_3, max) {
+		padding-top: 4rem;
+	}
+}
+
+.subheader_title {
+	max-width: 43rem;
+	margin-bottom: 1.2rem;
+	padding-bottom: 3rem;
+	color: $white;
+	font-family: $font_7;
+	font-size: 6.2rem;
+	line-height: 5.9rem;
+	text-transform: uppercase;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 2.3rem;
+		height: .2rem;
+		background-color: $accent_color_1;
+
+		@include bp($point_3, max) {
+			margin: auto;
+			right: 0;
+		}
+	}
+
+	@include bp($point_3, max) {
+		font-size: 4rem;
+		line-height: 4.7rem;
+		max-width: 28rem;
+		text-align: center;
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.subheader_subtile {
+	max-width: 32rem;
+	padding-bottom: 3.5rem;
+	color: $white;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+
+	@include bp($point_3, max) {
+		text-align: center;
+	}
+}
+
+.mouse_container {
+	position: relative;
+	z-index: 2;
+}
+
+.mouse {
+	width: 2.2rem;
+	height: 4.2rem;
+	left: 50%;
+	margin-top: 5rem;
+	border-radius: 1.5rem;
+	border: .1rem solid $white;
+	-webkit-animation: intro 1s;
+	animation: intro 1s;
+}
+.scroll {
+	display: block;
+	width: .2rem;
+	height: .3rem;
+	margin: .6rem auto;
+	border-radius: .4rem;
+	background: $white;
+	animation: finger 1s infinite;
+}
+@-webkit-keyframes intro {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(4rem);
+		transform: translateY(4rem);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes intro {
+	0% {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@-webkit-keyframes finger {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+}
+@keyframes finger {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+}

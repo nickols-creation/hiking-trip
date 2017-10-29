@@ -1,7 +1,8 @@
+@include font_face('Roboto-Thin', 'RobotoThin', $font_path, 100);
 @include font_face('Roboto-Light', 'RobotoLight', $font_path, 300);
 @include font_face('Roboto-LightItalic', 'RobotoLightItalic', $font_path, 300, italic);
 @include font_face('Roboto-Regular', 'RobotoRegular', $font_path, 400);
 @include font_face('Roboto-Medium', 'RobotoMedium', $font_path, 500);
-@include font_face('RobotoBold', 'RobotoBold', $font_path, 700);
+@include font_face('Roboto-Bold', 'RobotoBold', $font_path, 700);
 @include font_face('Gilroy-Light', 'GilroyLight', $font_path, 300);
 @include font_face('Gilroy-ExtraBold', 'GilroyExtraBold', $font_path, 700);

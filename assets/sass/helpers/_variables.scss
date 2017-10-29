@@ -7,20 +7,24 @@ $font_4: 'RobotoMedium', sans-serif;
 $font_5: 'RobotoBold', sans-serif;
 $font_6: 'GilroyLight', sans-serif;
 $font_7: 'GilroyExtraBold', sans-serif;
+$font_8: 'RobotoThin', sans-serif;
 $font_size_base: 1.4rem;
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
 $white: #fff;
 $black: #000;
+$green: #38CC66;
+$red: #E94348;
+$grey_1: #f6f6f6;
 $accent_color_1: #ff9730;
-
+$accent_color_2: #4ba5f2;
 $border_color_1: #eaeaea;
-
+$border_color_2: #EBEBEB;
+$border_color_3: #dfdfdf;
 $color_text_base: #7c7c7c;
-
+$color_text_2: #3a3a3a;
 $color_link_base: #4aa3df;
-
 $body_bg: $white;
 //---------------------------------------------colors###
 
@@ -41,7 +45,7 @@ $page_width: 120rem;
 
 //---------------------------------------------global values
 $gl_indent: 1.5rem;
-$gl_radius:.5rem;
+$gl_radius:.3rem;
 //---------------------------------------------global values###
 
 //---------------------------------------------media points
@@ -51,6 +55,8 @@ $point_3: 768px;
 $point_4: 480px;
 $point_5: 320px;
 $point_6: 1100px;
+$point_7: 850px;
+$point_8: 550px;
 //---------------------------------------------media points
 
 //---------------------------------------------forms

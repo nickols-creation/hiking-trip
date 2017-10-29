@@ -17,7 +17,12 @@
 // icons
 @import "icons";
 @import "sprite";
+@import "font-icon-embedded";
 
 // plagins
-
 @import "plagins/select2";
+@import "plagins/slick";
+
+// section
+@import "section/sub-header";
+@import "section/gallery";

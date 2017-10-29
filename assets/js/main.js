@@ -3,6 +3,9 @@ var $body,
 	windowWidth,
 	$headerSelect,
 	$menuTrigger,
+	$servisesSlider,
+	$btnPrev,
+	$btnNext,
 	mediaPoint1 = 1024,
 	mediaPoint2 = 768,
 	mediaPoint3 = 480,
@@ -14,6 +17,9 @@ $(document).ready(function ($) {
 	windowHeight = $(window).height();
 	$headerSelect = $('.language_list');
 	$menuTrigger = $('.menuTrigger');
+	$servisesSlider = $('.servises_slider');
+	$btnPrev = $('.arrow_prev');
+	$btnNext = $('.arrow_next');
 
 	// mobile menu
 	$menuTrigger.on('click', function () {
@@ -30,6 +36,25 @@ $(document).ready(function ($) {
 	$headerSelect.select2({
 		minimumResultsForSearch: Infinity,
 		dropdownParent: $('.select_language')
+	});
+
+	// servises slider
+	$servisesSlider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		arrows: false,
+		// autoplay: true,
+		autoplaySpeed: 2000
+	});
+
+	$btnNext.click(function(){
+		$servisesSlider.slick("slickNext");
+	});
+
+	$btnPrev.click(function(){
+		$servisesSlider.slick("slickPrev");
 	});
 
 	//developer funcitons
@@ -58,6 +83,12 @@ function resizeFunc() {
 
 function scrollFunc() {
 	updateSizes();
+	if($(this).scrollTop()>200){
+		$('.header').addClass('scroll_mod');
+	}
+	else if ($(this).scrollTop()<200){
+		$('.header').removeClass('scroll_mod');
+	}
 }
 
 function updateSizes() {
