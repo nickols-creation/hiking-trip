@@ -71,6 +71,10 @@
 	font-size: 3.8rem;
 	line-height: 5.9rem;
 
+	&.center_mod {
+		text-align: center;
+	}
+
 	@include bp($point_6, max) {
 		text-align: center;
 		font-size: 3rem;

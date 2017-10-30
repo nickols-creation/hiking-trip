@@ -19,9 +19,9 @@ block content_block
 			+servises_slider
 			.slider_bottom
 				.slider_controller
-					.arrow_prev
+					.arrow_prev.servises_prev
 						i.icon_left
-					.arrow_next
+					.arrow_next.servises_next
 						i.icon_right
 				.bottom_wrapper
 					a.button.default_mod.big_mod(href="#") Du-te la director
@@ -41,5 +41,38 @@ block content_block
 						img.galery_img(src="i/foto5.jpg" alt="")
 					.grid_item.item_6
 						img.galery_img(src="i/foto6.jpg" alt="")
+				.slider_controller.gallery_controller
+					.arrow_prev.gallery_prev
+						i.icon_left
+					.arrow_next.gallery_next
+						i.icon_right
 				.bottom_wrapper
 					a.button.default_mod.big_mod(href="#") Vedeți toate fotografiile
+	section.section.grey_mod
+		.content_wrapper
+			.section_head
+				h2.section_title.center_mod Cele mai apropiate excursii
+			.reviews_top_slider
+				.reviews_item
+					.reviews_text
+						p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+				.reviews_item
+					.reviews_text
+						p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+
+			.reviews_bottom_slider
+				.reviews_item
+					.reviews_user Ivanov Maxim
+					.servises_review Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.bottom_wrapper
+						a.button.default_mod.big_mod(href="#") Adăugați-vă recenzia
+				.reviews_item
+					.reviews_user Ivanov Maxim
+					.servises_review Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.bottom_wrapper
+						a.button.default_mod.big_mod(href="#") Adăugați-vă recenzia
+	section.section.white_mod
+		.content_wrapper
+			.section_head
+				h2.section_title Contactați-ne
+			+contacts_section

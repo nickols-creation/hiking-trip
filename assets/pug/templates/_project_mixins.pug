@@ -144,6 +144,49 @@ mixin servises_slider
 			+loop_while(2)
 				.servises_slider_item
 					+servises_list
+mixin contacts_section
+	.contacts_in
+		.contacts_form_wrapper
+			.contacts_form_title Trimiteți-ne un mesaj și îi vom răspunde în decurs de o oră
+			form.contacts_form
+				+form_element({
+					type: 'text',
+					class_array: default_field,
+					title: '',
+					id: 'name',
+					placeholder: 'Nume'
+				})
+				+form_element({
+					type: 'tel',
+					class_array: default_field,
+					title: '',
+					id: 'phone',
+					placeholder: 'Numărul de telefon'
+				})
+				+form_element({
+					type: 'email',
+					class_array: default_field,
+					title: '',
+					id: 'email',
+					placeholder: 'E-mail'
+				})
+				+form_element({
+					type: 'textarea',
+					class_array: default_field,
+					title: '',
+					id: 'message',
+					placeholder: 'Mesajul tău'
+				})
+				.bottom_wrapper
+					.button.default_mod Pentru a trimite
+		.contacts_info_wrapper
+			.top_contacts
+				.contact_item.geo_mod Romania
+				a.contact_item.phone_mod(href="tel:88002005888") 8-800-2005-888
+				a.contact_item.mail_mod(href="mailto:88002005888") maximwdesigner@gmail.com
+			.wiget_wrapper
+				.widget_item
+				.widget_item
 
 mixin footer
 	footer.footer

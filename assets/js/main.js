@@ -4,8 +4,13 @@ var $body,
 	$headerSelect,
 	$menuTrigger,
 	$servisesSlider,
+	$gallerySlider,
 	$btnPrev,
 	$btnNext,
+	$btnPrev2,
+	$btnNext2,
+	$reviewsTopSlider,
+	$reviewsBottomSlider,
 	mediaPoint1 = 1024,
 	mediaPoint2 = 768,
 	mediaPoint3 = 480,
@@ -18,8 +23,13 @@ $(document).ready(function ($) {
 	$headerSelect = $('.language_list');
 	$menuTrigger = $('.menuTrigger');
 	$servisesSlider = $('.servises_slider');
-	$btnPrev = $('.arrow_prev');
-	$btnNext = $('.arrow_next');
+	$gallerySlider = $('.gallery_grid_wrapper');
+	$btnPrev = $('.servises_prev');
+	$btnNext = $('.servises_next');
+	$btnPrev2 = $('.gallery_prev');
+	$btnNext2 = $('.gallery_next');
+	$reviewsTopSlider = $('.reviews_top_slider');
+	$reviewsBottomSlider = $('.reviews_bottom_slider');
 
 	// mobile menu
 	$menuTrigger.on('click', function () {
@@ -55,6 +65,75 @@ $(document).ready(function ($) {
 
 	$btnPrev.click(function(){
 		$servisesSlider.slick("slickPrev");
+	});
+
+	$btnNext2.click(function(){
+		$gallerySlider.slick("slickNext");
+	});
+
+	$btnPrev2.click(function(){
+		$gallerySlider.slick("slickPrev");
+	})
+
+	// gallery slider
+	$(function(){
+		var $carousel = $('.gallery_grid_wrapper');
+		function showSliderScreen($widthScreen) {
+			//  console.log($widthScreen);
+
+			if ($widthScreen <= "360") {
+				if (!$carousel.hasClass('slick-initialized')) {
+					$carousel.slick({
+						infinite: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: false,
+						arrows: false,
+						//  autoplay: true,
+						autoplaySpeed: 2000,
+						adaptiveHeight: true
+					});
+				}
+
+			} else {
+				if ($carousel.hasClass('slick-initialized')) {
+					$carousel.slick('unslick');
+				}
+			}
+		}
+
+		var widthScreen = $(window).width();
+		$(window).ready(showSliderScreen(widthScreen)).resize(
+			function () {
+				var widthScreen = $(window).width();
+				showSliderScreen(widthScreen);
+			}
+		);
+	});
+
+
+	$reviewsTopSlider.slick({
+		infinite: true,
+		// autoplay: true,
+		autoplaySpeed: 3000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		// fade: true,
+		dots: false,
+		asNavFor: '.reviews_bottom_slider',
+		prevArrow: "<span class='reviews_prev'></span>",
+		nextArrow: "<span class='reviews_next'></span>"
+	});
+	$reviewsBottomSlider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		// fade: true,
+		dots: false,
+		asNavFor: '.reviews_top_slider',
+		focusOnSelect: true
 	});
 
 	//developer funcitons

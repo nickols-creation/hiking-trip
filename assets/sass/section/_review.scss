@@ -1,0 +1,137 @@
+.reviews_top_slider {
+	max-width: 94.4rem;
+	margin: 0 auto;
+	padding: 0 4rem;
+
+	@include bp($point_6, max) {
+		padding: 0 0 6.5rem;
+	}
+
+	.slick-track {
+		margin:auto;
+	}
+
+	.reviews_prev {
+		position: absolute;
+		top: 2rem;
+		left: 0;
+		width: 2.6rem;
+		height: 3.6rem;
+		cursor: pointer;
+		z-index: 1;
+
+		@include bp($point_6, max) {
+			margin: auto;
+			top: 100%;
+			bottom: 6rem;
+			right: 6rem;
+		}
+		&::before {
+			content: '«';
+			position: absolute;
+			line-height: 2.6rem;
+			font-family: $font_2;
+			font-size: 6.7rem;
+			@extend %transition_color;
+		}
+		&:hover {
+			&::before {
+				color: $accent_color_1;
+			}
+		}
+	}
+	.reviews_next {
+		position: absolute;
+		top: 2rem;
+		right: 0;
+		width: 2.6rem;
+		height: 3.6rem;
+		cursor: pointer;
+		z-index: 1;
+		@include bp($point_6, max) {
+			margin: auto;
+			top: 100%;
+			bottom: 6rem;
+			left: 6rem;
+		}
+		&::before {
+			content: '»';
+			position: absolute;
+			line-height: 2.6rem;
+			font-family: $font_2;
+			font-size: 6.7rem;
+			@extend %transition_color;
+		}
+		&:hover {
+			&::before {
+				color: $accent_color_1;
+			}
+		}
+	}
+}
+
+.reviews_item {
+	text-align: center;
+}
+
+.reviews_text {
+	font-family: $font_2;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	padding: 0 9rem 3.8rem;
+	display: inline-block;
+	max-width: 74.5rem;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 3.9rem;
+		height: 2.9rem;
+		background: url("../i/icons/qu1.png") no-repeat;
+
+		@include bp($point_6, max) {
+			margin: auto;
+			right: 0;
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 3.9rem;
+		height: 2.9rem;
+		background: url("../i/icons/qu2.png") no-repeat;
+
+		@include bp($point_6, max) {
+			margin: auto;
+			left: 0;
+		}
+	}
+
+	@include bp($point_6, max) {
+		padding: 6rem 0;
+	}
+}
+
+.reviews_user {
+	color: #3a3a3a;
+	font-family: $font_4;
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+	padding-bottom: .8rem;
+}
+
+.servises_review {
+	max-width: 27rem;
+	display: inline-block;
+	color: $accent_color_1;
+	font-family: $font_5;
+	font-size: 1.2rem;
+	font-weight: 700;
+	line-height: 2rem;
+	text-transform: uppercase;
+	padding-bottom: 4.4rem;
+}
