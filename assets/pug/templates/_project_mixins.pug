@@ -172,21 +172,50 @@ mixin contacts_section
 				})
 				+form_element({
 					type: 'textarea',
-					class_array: default_field,
+					class_array: textarea_field,
 					title: '',
 					id: 'message',
+					add_class: 'textarea_mod_1',
 					placeholder: 'Mesajul tău'
 				})
 				.bottom_wrapper
-					.button.default_mod Pentru a trimite
+					.button.default_mod.big_mod Pentru a trimite
 		.contacts_info_wrapper
 			.top_contacts
 				.contact_item.geo_mod Romania
 				a.contact_item.phone_mod(href="tel:88002005888") 8-800-2005-888
 				a.contact_item.mail_mod(href="mailto:88002005888") maximwdesigner@gmail.com
-			.wiget_wrapper
-				.widget_item
-				.widget_item
+			.widget_wrapper
+				.widget_social_item
+					//- widget demo------del##
+					img.demo_img(src="i/demo1.png" alt="")
+				.widget_social_item
+					//- widget demo------del##
+					img.demo_img(src="i/demo2.png" alt="")
 
 mixin footer
 	footer.footer
+		.content_wrapper
+			nav.footer_nav
+				ul.footer_nav_list
+					li.footer_nav_item
+						a.footer_nav_link.active_page(href="#") Acasă
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Servicii
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Despre noi
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Cele mai apropiate excursii
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Galerie
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Feedback
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Contacte
+				.footer_bottom
+					.footer_copy © 2017 — hikingtrip
+					.footer_social_list
+						a.footer_social_link(href="#")
+							i.icon_facebook
+						a.footer_social_link(href="#")
+							i.icon_instagram

@@ -11,6 +11,7 @@ var $body,
 	$btnNext2,
 	$reviewsTopSlider,
 	$reviewsBottomSlider,
+	$galleryWrapper,
 	mediaPoint1 = 1024,
 	mediaPoint2 = 768,
 	mediaPoint3 = 480,
@@ -30,6 +31,7 @@ $(document).ready(function ($) {
 	$btnNext2 = $('.gallery_next');
 	$reviewsTopSlider = $('.reviews_top_slider');
 	$reviewsBottomSlider = $('.reviews_bottom_slider');
+	$galleryWrapper = $('.gallery_grid_wrapper');
 
 	// mobile menu
 	$menuTrigger.on('click', function () {
@@ -77,13 +79,12 @@ $(document).ready(function ($) {
 
 	// gallery slider
 	$(function(){
-		var $carousel = $('.gallery_grid_wrapper');
 		function showSliderScreen($widthScreen) {
 			//  console.log($widthScreen);
 
 			if ($widthScreen <= "360") {
-				if (!$carousel.hasClass('slick-initialized')) {
-					$carousel.slick({
+				if (!$galleryWrapper.hasClass('slick-initialized')) {
+					$galleryWrapper.slick({
 						infinite: true,
 						slidesToShow: 1,
 						slidesToScroll: 1,
@@ -96,8 +97,8 @@ $(document).ready(function ($) {
 				}
 
 			} else {
-				if ($carousel.hasClass('slick-initialized')) {
-					$carousel.slick('unslick');
+				if ($galleryWrapper.hasClass('slick-initialized')) {
+					$galleryWrapper.slick('unslick');
 				}
 			}
 		}
@@ -125,6 +126,7 @@ $(document).ready(function ($) {
 		prevArrow: "<span class='reviews_prev'></span>",
 		nextArrow: "<span class='reviews_next'></span>"
 	});
+
 	$reviewsBottomSlider.slick({
 		infinite: true,
 		slidesToShow: 1,
@@ -136,8 +138,30 @@ $(document).ready(function ($) {
 		focusOnSelect: true
 	});
 
+
+	$galleryWrapper.magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+
+	});
+
+
+
 	//developer funcitons
-	pageWidget(['index']);
+	pageWidget(['index', 'about']);
 	getAllClasses('html','.elements_list');
 });
 
@@ -162,10 +186,10 @@ function resizeFunc() {
 
 function scrollFunc() {
 	updateSizes();
-	if($(this).scrollTop()>200){
+	if($(this).scrollTop()>10){
 		$('.header').addClass('scroll_mod');
 	}
-	else if ($(this).scrollTop()<200){
+	else if ($(this).scrollTop()<10){
 		$('.header').removeClass('scroll_mod');
 	}
 }

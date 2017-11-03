@@ -1,0 +1,50 @@
+.breadcrumbs_list {
+	&.default_mod {
+		@extend %global_flex_block_row_wrap_flex-start_center;
+		margin: 0;
+		padding: 1.4rem 0;
+		list-style: none;
+	}
+}
+
+.breadcrumbs_item {
+	position: relative;
+	padding-right: 2rem;
+	margin-right: 1rem;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	&::before {
+		content: '\e800';
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 1.1rem;
+		color: $color_text_base;
+		font-family: 'font-icon';
+		opacity: .9;
+	}
+	&:last-child {
+		margin-right: 0;
+		padding-right: 0;
+		color: $color_text_2;
+		font-family: $font_4;
+		&::before {
+			display: none;
+		}
+
+		.breadcrumbs_link {
+			text-decoration: none;
+			color: $color_text_2;
+		}
+	}
+}
+
+.breadcrumbs_link {
+	text-decoration: underline;
+	color: $color_text_base;
+
+	&:hover {
+		color: $color_link_base;
+		text-decoration: underline;
+	}
+}
