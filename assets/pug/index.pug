@@ -1,6 +1,78 @@
 extends _layout
 
 block vars
-	- var array = {body_class:'', layout_mod:'', sub_keywords:'',title_inner:'Title of the page'}
+	- var array = {body_class:'home_page', layout_mod:'', sub_keywords:'',title_inner:'Home'}
 block content_block
+	+sub_header({
+		mod: 'homepage_mod',
+		bgImg: 'i/subheader-img.jpg',
+		titleText: 'Organizarea turismului în România',
+		subtitleText: 'Organizarea de excursii și excursii colective și individuale în România',
+		btnText: 'Cele mai apropiate excursii'
+	})
+	section.section.second_mod.white_mod.bg_mod
+		.section_bg_wrapper
+			img.section_bg_img(src="i/section-bg.png" alt="")
+		.content_wrapper
+			.section_head
+				h2.section_title Cele mai apropiate excursii
+			+servises_slider
+			.slider_bottom
+				.slider_controller
+					.arrow_prev.servises_prev
+						i.icon_left
+					.arrow_next.servises_next
+						i.icon_right
+				.bottom_wrapper
+					a.button.default_mod.big_mod(href="#") Du-te la director
+			.gallery_wrapper
+				.section_head
+					h2.section_title Galerie
+				.gallery_grid_wrapper
+					a.grid_item.item_1(href="i/foto1.jpg")
+						img.galery_img(src="i/foto1.jpg" alt="")
+					a.grid_item.item_2(href="i/foto2.jpg")
+						img.galery_img(src="i/foto2.jpg" alt="")
+					a.grid_item.item_3(href="i/foto3.jpg")
+						img.galery_img(src="i/foto3.jpg" alt="")
+					a.grid_item.item_4(href="i/foto4.jpg")
+						img.galery_img(src="i/foto4.jpg" alt="")
+					a.grid_item.item_5(href="i/foto5.jpg")
+						img.galery_img(src="i/foto5.jpg" alt="")
+					a.grid_item.item_6(href="i/foto6.jpg")
+						img.galery_img(src="i/foto6.jpg" alt="")
+				.slider_controller.gallery_controller
+					.arrow_prev.gallery_prev
+						i.icon_left
+					.arrow_next.gallery_next
+						i.icon_right
+				.bottom_wrapper
+					a.button.default_mod.big_mod(href="#") Vedeți toate fotografiile
+	section.section.grey_mod
+		.content_wrapper
+			.section_head
+				h2.section_title.center_mod Cele mai apropiate excursii
+			.reviews_top_slider
+				.reviews_item
+					.reviews_text
+						p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+				.reviews_item
+					.reviews_text
+						p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
 
+			.reviews_bottom_slider
+				.reviews_item
+					.reviews_user Ivanov Maxim
+					.servises_review Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.bottom_wrapper
+						a.button.default_mod.big_mod(href="#") Adăugați-vă recenzia
+				.reviews_item
+					.reviews_user Ivanov Maxim
+					.servises_review Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.bottom_wrapper
+						a.button.default_mod.big_mod(href="#") Adăugați-vă recenzia
+	section.section.white_mod
+		.content_wrapper
+			.section_head
+				h2.section_title Contactați-ne
+			+contacts_section

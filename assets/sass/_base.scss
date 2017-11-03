@@ -12,7 +12,7 @@ body {
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: $black;
+	background: $white;
 
 	&.menu_open {
 		overflow: hidden;
@@ -20,6 +20,38 @@ body {
 			opacity: 1;
 			visibility: visible;
 			transform: translateX(0);
+		}
+		@include bp($point_6, max) {
+			.fog {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&.inner_bg_mod {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-image: url('../i/subheader-img.jpg');
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			pointer-events: none;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: $height_header;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: $white;
+			pointer-events: none;
+			opacity: .98;
 		}
 	}
 }
@@ -33,7 +65,11 @@ body {
 
 .base {
 	position: relative;
-	padding: $height_header 0 $height_footer;
+	padding: 0 0 $height_footer;
+
+	@include bp($point_7, max) {
+		padding-bottom: 0;
+	}
 }
 
 .content_wrapper {

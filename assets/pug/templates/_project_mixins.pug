@@ -1,5 +1,7 @@
 mixin header
+
 	header.header
+		.fog
 		.header_in
 			a.logo_link(href="./")
 				img.logo_img(src="i/header-logo.png" alt="logo")
@@ -30,5 +32,190 @@ mixin header
 					})
 			.menu_trigger.menuTrigger
 				span.menu_trigger_decor
+mixin sub_header(array)
+	.sub_header(class= array.mod)
+		.subheader_bg_wrapper
+			img.subheader_bg_img(src= array.bgImg alt="")
+		if array.titleText
+			.subheader_content
+				.content_wrapper
+					h1.subheader_title= array.titleText
+					.subheader_subtile= array.subtitleText
+					a.button.default_mod(href="#")= array.btnText
+					.mouse
+						.scroll
+mixin servises_list
+	ul.servises_list
+		li.servises_item_wrapper
+			.servises_item.sunny_mod
+				.servises_foto_wrapper
+					.weather_status Vară
+					img.servises_foto(src="i/servis1.jpg" alt="")
+				.servises_info_wrapper
+					h3.servises_title Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.servises_info
+						.servises_info_line
+							.info_line_title Durata:
+							.info_line_value 8 zile (7 nopți)
+						.servises_info_line
+							.info_line_title Durata trecerii:
+							.info_line_value 65 km
+						.servises_info_line
+							.info_line_title Dificultate:
+							.info_line_value.indicator_mod.green_mod
+								span.indicator
+								span.indicator
+								span.indicator
+					.srvises_buy_wrapper
+						.servises_price 99 €
+						a.button.buy_mod(href="#") Aflați mai multe
+		li.servises_item_wrapper
+			.servises_item.snow_mod
+				.servises_foto_wrapper
+					.weather_status Iarnă
+					img.servises_foto(src="i/servis2.jpg" alt="")
+				.servises_info_wrapper
+					h3.servises_title Urmează a doua cea mai mare partea de
+					.servises_info
+						.servises_info_line
+							.info_line_title Durata:
+							.info_line_value 8 zile (7 nopți)
+						.servises_info_line
+							.info_line_title Durata trecerii:
+							.info_line_value 65 km
+						.servises_info_line
+							.info_line_title Dificultate:
+							.info_line_value.indicator_mod.orange_mod
+								span.indicator
+								span.indicator
+								span.indicator
+					.srvises_buy_wrapper
+						.servises_price 65 €
+						a.button.buy_mod(href="#") Aflați mai multe
+		li.servises_item_wrapper
+			.servises_item.snow_mod
+				.servises_foto_wrapper
+					.weather_status Iarnă
+					img.servises_foto(src="i/servis3.jpg" alt="")
+				.servises_info_wrapper
+					h3.servises_title Urmează a doua cea mai mare partea de
+					.servises_info
+						.servises_info_line
+							.info_line_title Durata:
+							.info_line_value 8 zile (7 nopți)
+						.servises_info_line
+							.info_line_title Durata trecerii:
+							.info_line_value 65 km
+						.servises_info_line
+							.info_line_title Dificultate:
+							.info_line_value.indicator_mod.red_mod
+								span.indicator
+								span.indicator
+								span.indicator
+					.srvises_buy_wrapper
+						.servises_price 65 €
+						a.button.buy_mod(href="#") Aflați mai multe
+		li.servises_item_wrapper
+			.servises_item.sunny_mod
+				.servises_foto_wrapper
+					.weather_status Vară
+					img.servises_foto(src="i/servis1.jpg" alt="")
+				.servises_info_wrapper
+					h3.servises_title Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+					.servises_info
+						.servises_info_line
+							.info_line_title Durata:
+							.info_line_value 8 zile (7 nopți)
+						.servises_info_line
+							.info_line_title Durata trecerii:
+							.info_line_value 65 km
+						.servises_info_line
+							.info_line_title Dificultate:
+							.info_line_value.indicator_mod.green_mod
+								span.indicator
+								span.indicator
+								span.indicator
+					.srvises_buy_wrapper
+						.servises_price 99 €
+						a.button.buy_mod(href="#") Aflați mai multe
+mixin servises_slider
+	.srvises_slider_wrapper
+		.servises_slider
+			+loop_while(2)
+				.servises_slider_item
+					+servises_list
+mixin contacts_section
+	.contacts_in
+		.contacts_form_wrapper
+			.contacts_form_title Trimiteți-ne un mesaj și îi vom răspunde în decurs de o oră
+			form.contacts_form
+				+form_element({
+					type: 'text',
+					class_array: default_field,
+					title: '',
+					id: 'name',
+					placeholder: 'Nume'
+				})
+				+form_element({
+					type: 'tel',
+					class_array: default_field,
+					title: '',
+					id: 'phone',
+					placeholder: 'Numărul de telefon'
+				})
+				+form_element({
+					type: 'email',
+					class_array: default_field,
+					title: '',
+					id: 'email',
+					placeholder: 'E-mail'
+				})
+				+form_element({
+					type: 'textarea',
+					class_array: textarea_field,
+					title: '',
+					id: 'message',
+					add_class: 'textarea_mod_1',
+					placeholder: 'Mesajul tău'
+				})
+				.bottom_wrapper
+					.button.default_mod.big_mod Pentru a trimite
+		.contacts_info_wrapper
+			.top_contacts
+				.contact_item.geo_mod Romania
+				a.contact_item.phone_mod(href="tel:88002005888") 8-800-2005-888
+				a.contact_item.mail_mod(href="mailto:88002005888") maximwdesigner@gmail.com
+			.widget_wrapper
+				.widget_social_item
+					//- widget demo------del##
+					img.demo_img(src="i/demo1.png" alt="")
+				.widget_social_item
+					//- widget demo------del##
+					img.demo_img(src="i/demo2.png" alt="")
+
 mixin footer
 	footer.footer
+		.content_wrapper
+			nav.footer_nav
+				ul.footer_nav_list
+					li.footer_nav_item
+						a.footer_nav_link.active_page(href="#") Acasă
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Servicii
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Despre noi
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Cele mai apropiate excursii
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Galerie
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Feedback
+					li.footer_nav_item
+						a.footer_nav_link(href="#") Contacte
+				.footer_bottom
+					.footer_copy © 2017 — hikingtrip
+					.footer_social_list
+						a.footer_social_link(href="#")
+							i.icon_facebook
+						a.footer_social_link(href="#")
+							i.icon_instagram

@@ -21,11 +21,56 @@
 	}
 }
 
+%accent_btn {
+	font-family: $font_3;
+	color: $white;
+	background: $accent_color_1;
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: darken($accent_color_1, 10%);
+	}
+}
+
+%buy_btn {
+	font-family: $font_3;
+	color: $accent_color_1;
+	transition: .3s ease;
+	border: .1rem solid $accent_color_1;
+	@include st_btn();
+
+	&:hover {
+		color: $white;
+		background: darken($accent_color_1, 10%);
+	}
+}
+
 //size extends
 %btn_size_1 {
-	height: 4rem;
-	padding: 0 1.2rem;
-	line-height: 4rem;
-	font-size: 1.6rem;
+	height: 4.8rem;
+	padding: 0 1.4rem;
+	line-height: 4.8rem;
+	font-size: 1.4rem;
 	border-radius: $gl_radius;
+	cursor: pointer;
+}
+
+%btn_size_2 {
+	height: 3.3rem;
+	padding: 0 1.4rem;
+	line-height: 3.3rem;
+	font-size: 1.4rem;
+	border-radius: $gl_radius;
+	cursor: pointer;
+}
+
+%btn_size_3 {
+	height: 4.8rem;
+	padding: 0 4.8rem;
+	line-height: 4.8rem;
+	font-size: 1.4rem;
+	border-radius: $gl_radius;
+	cursor: pointer;
 }
