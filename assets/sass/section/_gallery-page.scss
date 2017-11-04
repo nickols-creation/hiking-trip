@@ -1,0 +1,107 @@
+.gallery_list_wrapper {
+	padding-top: 3rem;
+}
+
+.gallery_list {
+	@extend %global_flex_block_row_wrap_flex-start_stretch;
+	margin: 0 -3rem -3rem 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gallery_item_wrapper {
+	width: 33.33%;
+	padding: 0 3rem 3rem 0;
+
+	@include bp($point_10, max) {
+		width: 50%;
+	}
+	@include bp($point_11, max) {
+		width: 100%;
+	}
+}
+
+.gallery_item {
+	display: block;
+	text-decoration: none;
+	color: $color_text_2;
+	background-color: $white;
+	box-shadow: 0 1.2rem 3.3rem rgba(217, 217, 217, 0.75);
+	&:hover {
+		.gallery_foto_img {
+			transform: scale(1.2);
+		}
+	}
+}
+
+.galery_foto_wrapper {
+	width: 100%;
+	height: 19.5rem;
+	overflow: hidden;
+}
+
+.gallery_foto_img {
+	@extend %transition_transform;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery_txt_wrapper {
+	padding: 3rem;
+	text-align: center;
+}
+
+.gallery_title {
+	color: $color_text_2;
+	font-family: $font_5;
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+	padding-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 1.7rem;
+		height: .2rem;
+		background-color: $color_text_2;
+	}
+}
+
+.gallery_txt {
+	padding: 0 2rem 2rem;
+	margin-bottom: 2rem;
+	border-bottom: .1rem solid $grey_2;
+}
+
+.gallery_info_wrapper {
+	text-align: center;
+}
+
+.gallery_info {
+	display: inline-block;
+	color: $color_text_4;
+	font-family: $font_5;
+	font-size: 1.2rem;
+	line-height: 2.2rem;
+	text-transform: uppercase;
+	padding-left: 3rem;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: .2rem;
+		left: 0;
+		width: 1.9rem;
+		height: 1.5rem;
+		background: url('../i/icons/camera.png') no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+	}
+}

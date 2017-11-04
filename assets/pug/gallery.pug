@@ -1,0 +1,74 @@
+extends _layout
+
+block vars
+	- var array = {body_class:'gallery_page inner_bg_mod2', layout_mod:'', sub_keywords:'',title_inner:'Gallery'}
+block content_block
+	section.section_inner
+		.content_wrapper
+			.page_heading.bg_mod
+				h1.page_title Galerie
+			+breadcrumbs(['Acasă', 'Galerie'], 'default_mod')
+			.gallery_list_wrapper
+				ul.gallery_list
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery1.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery2.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery3.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery1.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery2.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+					li.gallery_item_wrapper
+						a.gallery_item(href="#")
+							.galery_foto_wrapper
+								img.gallery_foto_img(src="i/gallery3.jpg" alt="")
+							.gallery_txt_wrapper
+								h3.gallery_title Numele albumului foto
+								.gallery_txt
+									p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+								.gallery_info_wrapper
+									.gallery_info Numărul de fotografii: 13
+				.button_wrapper.default_mod
+					a.button.big_mod2.symbol_mod <span class="button_symbol">+</span>Încărcați mai mult

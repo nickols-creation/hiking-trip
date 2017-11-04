@@ -12,6 +12,7 @@ var $body,
 	$reviewsTopSlider,
 	$reviewsBottomSlider,
 	$galleryWrapper,
+	$albumGallery,
 	mediaPoint1 = 1024,
 	mediaPoint2 = 768,
 	mediaPoint3 = 480,
@@ -32,6 +33,7 @@ $(document).ready(function ($) {
 	$reviewsTopSlider = $('.reviews_top_slider');
 	$reviewsBottomSlider = $('.reviews_bottom_slider');
 	$galleryWrapper = $('.gallery_grid_wrapper');
+	$albumGallery = $('.js_album_gallery');
 
 	// mobile menu
 	$menuTrigger.on('click', function () {
@@ -158,10 +160,29 @@ $(document).ready(function ($) {
 
 	});
 
+	$albumGallery.magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+
+	});
+
 
 
 	//developer funcitons
-	pageWidget(['index', 'about']);
+	pageWidget(['index', 'about', 'gallery', 'album', 'rezerv']);
 	getAllClasses('html','.elements_list');
 });
 

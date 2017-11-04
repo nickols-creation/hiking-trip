@@ -1,0 +1,45 @@
+extends _layout
+
+block vars
+	- var array = {body_class:'gallery_page inner_bg_mod3', layout_mod:'', sub_keywords:'',title_inner:'Gallery'}
+block content_block
+	section.section_inner
+		.content_wrapper
+			+breadcrumbs(['Acasă', 'Galerie', 'Numele albumului foto'], 'default_mod')
+			.page_content
+				.album_heading
+					h1.gallery_title Numele albumului foto
+					.gallery_txt
+						p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+					.gallery_info_wrapper
+						.gallery_info Numărul de fotografii: 13
+				ul.gallery_list.js_album_gallery
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery1.jpg")
+							img.galery_img(src="i/gallery1.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery2.jpg")
+							img.galery_img(src="i/gallery2.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery3.jpg")
+							img.galery_img(src="i/gallery3.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery1.jpg")
+							img.galery_img(src="i/gallery1.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery2.jpg")
+							img.galery_img(src="i/gallery2.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery3.jpg")
+							img.galery_img(src="i/gallery3.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery1.jpg")
+							img.galery_img(src="i/gallery1.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery2.jpg")
+							img.galery_img(src="i/gallery2.jpg" alt="")
+					li.gallery_item_wrapper
+						a.grid_item.album_mod(href="i/gallery3.jpg")
+							img.galery_img(src="i/gallery3.jpg" alt="")
+				.button_wrapper.default_mod
+					a.button.big_mod2.symbol_mod <span class="button_symbol">+</span>Încărcați mai mult

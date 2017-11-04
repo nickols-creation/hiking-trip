@@ -27,6 +27,20 @@
 	position: relative;
 	cursor: pointer;
 	display: block;
+	&.album_mod {
+		height: calc(33.33vw * 0.577);
+		max-width: 100% !important;
+
+		@include bp($point_12, max) {
+			height: calc(33.33vw * 0.81);
+		}
+		@include bp($point_10, max) {
+			height: calc(50vw * 0.81);
+		}
+		@include bp($point_11, max) {
+			height: calc(100vw * 0.81);
+		}
+	}
 	&:hover {
 		&::before {
 			opacity: 1;
