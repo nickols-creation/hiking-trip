@@ -1,9 +1,152 @@
 extends _layout
 
 block vars
-	- var array = {body_class:'gallery_page inner_bg_mod3', layout_mod:'', sub_keywords:'',title_inner:'Gallery'}
+	- var array = {body_class:'rezerv_page inner_bg_mod3', layout_mod:'', sub_keywords:'',title_inner:'Rezerv'}
 block content_block
 	section.section_inner.second_mod
 		.content_wrapper
 			h1.section_title.inner_mod Tur de rezervare
 			.rezerv_wrapper
+				.tur_info_banner <span class="bold_mod">Tur: </span> Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+				.rezerv_select_item.line_mod
+					.select_item_title Numărul de persoane:
+					.select_item_value
+						+form_element({
+							type: 'radio',
+							class_array: rezerv_mod_checked,
+							title: '2',
+							name: 'radio',
+							checked: true,
+							value: '2'
+						})
+						+form_element({
+							type: 'radio',
+							class_array: rezerv_mod,
+							title: '4',
+							name: 'radio',
+							checked: false,
+							value: '4'
+						})
+						+form_element({
+							type: 'radio',
+							class_array: rezerv_mod,
+							title: '6',
+							name: 'radio',
+							checked: false,
+							value: '6'
+						})
+						+form_element({
+							type: 'radio',
+							class_array: rezerv_mod,
+							title: '8',
+							name: 'radio',
+							checked: false,
+							value: '8'
+						})
+				.rezerv_select_item.line_mod
+					.select_item_title Serviciu de transfer:
+					.select_item_value București <span class="accent_mod">23 €</span>
+				.rezerv_select_item.list_mod
+					.select_item_title Închiriere de echipamente:
+					.select_item_value
+						ul.quantity_list
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Rusnac <span class="accent_mod"> 13 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Pantofi pentru trekking <span class="accent_mod"> 11 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Sac de dormit  <span class="accent_mod"> 11 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Cort  <span class="accent_mod"> 13 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Cort  <span class="accent_mod"> 13 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Rusnac <span class="accent_mod"> 13 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Pantofi pentru trekking <span class="accent_mod"> 11 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Pantofi pentru trekking <span class="accent_mod"> 11 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+							li.quantity_item_wrapper
+								.quantity_item
+									.rezerv_quantity_title Sac de dormit  <span class="accent_mod"> 11 €</span>
+									form.quantity_form
+										button.js_qty_minus.quantity_button.minus_mod(type="button" field="quantity")
+										input(type="text" name="quantity" value="1" class="js_qty")
+										button.js_qty_plus.quantity_button.plus_mod(type="button" field="quantity")
+									.del_button
+				.rezerv_select_item.list_mod
+					.select_item_title Informații personale:
+					.select_item_value
+						form.rezerv_form
+							+form_element({
+								type: 'text',
+								class_array: default_field,
+								title: '',
+								id: 'name',
+								placeholder: 'Nume'
+							})
+							+form_element({
+								type: 'tel',
+								class_array: default_field,
+								title: '',
+								id: 'phone',
+								placeholder: 'Numărul de telefon'
+							})
+							+form_element({
+								type: 'email',
+								class_array: default_field,
+								title: '',
+								id: 'email',
+								placeholder: 'E-mail'
+							})
+				.rezerv_total Total:<span class="accent_mod"> 135 €</span>
+				.button_wrapper.rezerv_mod
+					.button.default_mod.big_mod Rezervați un tur

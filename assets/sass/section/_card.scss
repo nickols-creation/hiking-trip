@@ -1,0 +1,125 @@
+.card_top_wrapper {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	width: 100%;
+}
+
+.card_slider {
+	@extend %global_flex_block_row_nowrap_flex-start_stretch;
+	width: 57.3%;
+	margin-right: 3rem;
+}
+.slider_thumb {
+	width: 6.8rem;
+	height: 37rem;
+	margin-right: 3rem;
+	padding: 2rem 0;
+	flex: none;
+	.arrow_btn {
+		@extend %transition_all;
+		display: inline-block;
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		height: 1.5rem;
+		width: 1.5rem;
+		cursor: pointer;
+
+	}
+	.foto_prev {
+		top: -.8rem;
+		@include triangle(top,#dedede,1rem);
+		&:hover {
+			border-bottom-color: $accent_color_1;
+		}
+	}
+	.foto_next {
+		bottom: -.8rem;
+		@include triangle(bottom,#dedede,1rem);
+		&:hover {
+			border-top-color: $accent_color_1;
+		}
+	}
+}
+
+.thumb_item {
+	width: 100%;
+	height: 6.8rem !important;
+	overflow: hidden;
+	cursor: pointer;
+	margin: .75rem 0;
+}
+
+
+.slider_foto {
+	width: 100%;
+	max-width: 56rem;
+	height: 37rem;
+	.slick-list {
+		height: 100%;
+	}
+	.slider-track {
+		transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+		height: 100%;
+	}
+	.slider_img {
+		transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+		transform: scale(1.2);
+	}
+
+}
+
+.foto_item {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	&.slick-active .slider_img {
+		transform: scale(1);
+	}
+}
+
+.slider_img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card_info {
+	width: 42.7rem;
+	.servises_info {
+		border-bottom: 0.1rem solid $border_color_2;
+		margin-bottom: .8rem;
+	}
+	.servises_info_line {
+		border-bottom: 0;
+	}
+}
+
+.select_aero_wrapper {
+	padding-bottom: 1.6rem;
+	border-bottom: 0.2rem solid $border_color_2;
+}
+
+.select_aero_title {
+	display: inline-block;
+	padding: 0 6.5rem 1rem 0;
+	position: relative;
+	color: $color_text_2;
+	font-family: $font_5;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	text-transform: uppercase;
+	&::before {
+		content: '';
+		position: absolute;
+		top: -.2rem;
+		right: 0;
+		width: 4.7rem;
+		height: 2.4rem;
+		background: url('../i/icons/aero1.png') no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+	}
+}

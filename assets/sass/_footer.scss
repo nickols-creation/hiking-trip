@@ -5,6 +5,7 @@
 	left: 0;
 	right: 0;
 	will-change: transform;
+	@include z-index(footer);
 
 	@include bp($point_7, max) {
 		position: relative;

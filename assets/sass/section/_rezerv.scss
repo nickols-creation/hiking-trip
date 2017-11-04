@@ -1,0 +1,226 @@
+.tur_info_banner {
+	padding: 1.2rem 2rem;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	color: $color_text_base;
+	background-color: $border_color_5;
+	border-left: .2rem solid $accent_color_1;
+	margin-bottom: 1.6rem;
+}
+
+.bold_mod {
+	font-family: $font_5;
+	color: $color_text_2;
+}
+
+.rezerv_select_item {
+	padding-bottom: 1.6rem;
+	margin-bottom: 1.6rem;
+	border-bottom: .1rem solid $grey_2;
+	&.line_mod {
+		@extend %global_flex_block_row_wrap_flex-start_center;
+		.select_item_value {
+			@extend %global_flex_block_row_wrap_flex-start_center;
+		}
+	}
+	&.list_mod {
+		.select_item_title {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.select_item_title {
+	font-family: $font_5;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	color: $color_text_2;
+	margin-right: 1.5rem;
+}
+
+.select_item_value {
+	.accent_mod {
+		padding-left: .4rem;
+	}
+}
+
+.radio_check {
+	&.rezerv_mod {
+		@extend %transition_all;
+		display: inline-block;
+		position: relative;
+		width: 2.2rem;
+		height: 2.2rem;
+		border: 0.1rem solid transparent;
+		text-align: center;
+		color: $color_text_2;
+		font-family: $font_4;
+		font-size: 1.4rem;
+		line-height: 2.2rem;
+		margin-right: .6rem;
+		cursor: pointer;
+		&.checked_mod {
+			border-color: $accent_color_1;
+		}
+		&:hover {
+			background-color: $border_color_5;
+			border-color: $accent_color_1;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.radio_check_input {
+			position: absolute;
+			opacity: 0;
+			left: 0;
+			top: 0;
+		}
+
+	}
+}
+
+.quantity_list {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+	margin: 0 -1rem -1rem 0;
+	padding: 0;
+	list-style: none;
+}
+
+.quantity_item_wrapper {
+	padding: 0 1rem 1rem 0;
+
+	@include bp($point_4, max) {
+		width: 100%;
+	}
+}
+
+.quantity_item {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+	height: 3.7rem;
+	padding: .2rem 3.5rem .2rem 2rem;
+	background-color: $border_color_5;
+	position: relative;
+
+	@include bp($point_4, max) {
+		flex-direction: column;
+		align-items: flex-start;
+		align-content: flex-start;
+		justify-content: center;
+		height: auto;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+	}
+}
+
+.rezerv_quantity_title {
+	margin-right: 1.6rem;
+	@include bp($point_4, max) {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+}
+
+.quantity_form {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+	border: 0.1rem solid $border_color_7;
+}
+
+.quantity_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 1.7rem;
+	height: 1.7rem;
+	cursor: pointer;
+	position: relative;
+	&::before {
+
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		font-family: 'font-icon';
+		color: $grey_4;
+	}
+	&.minus_mod {
+		&::before {
+			content: '\e805';
+		}
+	}
+	&.plus_mod {
+		&::before {
+			content: '\e806';
+		}
+	}
+	&:hover {
+		&::before {
+			color: $accent_color_1;
+		}
+	}
+}
+
+.js_qty {
+	background: transparent;
+	border: 0;
+	width: 1.8rem;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	text-align: center;
+	font-family: $font_4;
+	font-size: 1.4rem;
+}
+
+.del_button {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 1.4rem;
+	bottom: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	cursor: pointer;
+	&::before {
+		@extend %transition_background;
+		content: '';
+		position: absolute;
+		top: .7rem;
+		left: 0;
+		width: 100%;
+		height: .1rem;
+		background: $color_text_base;
+		transform: rotate(45deg);
+	}
+	&::after {
+		@extend %transition_background;
+		content: '';
+		position: absolute;
+		top: .7rem;
+		left: 0;
+		width: 100%;
+		height: .1rem;
+		background: $color_text_base;
+		transform: rotate(-45deg);
+	}
+	&:hover {
+		&::after,
+		&::before {
+			background: $accent_color_1;
+		}
+	}
+}
+
+.rezerv_form {
+	width: 100%;
+	max-width: 37rem;
+}
+
+.rezerv_total {
+	text-transform: uppercase;
+	font-family: $font_5;
+	font-size: 2rem;
+	line-height: 2.2rem;
+}

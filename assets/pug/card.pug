@@ -1,0 +1,60 @@
+extends _layout
+
+block vars
+	- var array = {body_class:'rezerv_page inner_bg_mod3', layout_mod:'', sub_keywords:'',title_inner:'Rezerv'}
+block content_block
+	section.section_inner
+		.content_wrapper
+			+breadcrumbs(['Acasă', 'Catalog tururi', 'Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)'], 'default_mod')
+			h1.section_title.inner_mod Urmează a doua cea mai mare partea de sus a României Negoyu (2535 m)
+			.card_top_wrapper
+				.card_slider
+					.slider_thumb
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.thumb_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+					.slider_foto
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+						.foto_item
+							img.slider_img(src="i/slider1.jpg" alt="")
+				.card_info
+					.servises_info
+						.servises_info_line
+							.info_line_title Durata:
+							.info_line_value 8 zile (7 nopți)
+						.servises_info_line
+							.info_line_title Durata trecerii:
+							.info_line_value 65 km
+						.servises_info_line
+							.info_line_title Dificultate:
+							.info_line_value.indicator_mod.green_mod
+								span.indicator
+								span.indicator
+								span.indicator
+					.select_aero_wrapper
+						.select_aero_title transfer de la aeroport
+						+form_element({
+							type: 'select',
+							class_array: standart_field,
+							title: '',
+							id: 'selectAero',
+							options: ['Selectați aeroportul', 'Selectați aeroportul 2', 'Selectați aeroportul 3']
+						})

@@ -13,6 +13,10 @@ var $body,
 	$reviewsBottomSlider,
 	$galleryWrapper,
 	$albumGallery,
+	$rezervCheck,
+	$fotoSlider,
+	$thumbSlider,
+	$standartSelect,
 	mediaPoint1 = 1024,
 	mediaPoint2 = 768,
 	mediaPoint3 = 480,
@@ -34,6 +38,10 @@ $(document).ready(function ($) {
 	$reviewsBottomSlider = $('.reviews_bottom_slider');
 	$galleryWrapper = $('.gallery_grid_wrapper');
 	$albumGallery = $('.js_album_gallery');
+	$rezervCheck = $('.radio_check_input');
+	$fotoSlider = $('.slider_foto');
+	$thumbSlider = $('.slider_thumb');
+	$standartSelect = $('.standart_select');
 
 	// mobile menu
 	$menuTrigger.on('click', function () {
@@ -50,6 +58,12 @@ $(document).ready(function ($) {
 	$headerSelect.select2({
 		minimumResultsForSearch: Infinity,
 		dropdownParent: $('.select_language')
+	});
+
+	// aeroport select
+	 $standartSelect.select2({
+		minimumResultsForSearch: Infinity,
+		dropdownParent: $('.default_mod')
 	});
 
 	// servises slider
@@ -114,7 +128,7 @@ $(document).ready(function ($) {
 		);
 	});
 
-
+	// reviews slider
 	$reviewsTopSlider.slick({
 		infinite: true,
 		// autoplay: true,
@@ -140,7 +154,7 @@ $(document).ready(function ($) {
 		focusOnSelect: true
 	});
 
-
+	// home gallery
 	$galleryWrapper.magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -160,6 +174,7 @@ $(document).ready(function ($) {
 
 	});
 
+	// album gallery
 	$albumGallery.magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -180,9 +195,69 @@ $(document).ready(function ($) {
 	});
 
 
+	// rezerv radio button
+	$rezervCheck.change(function(){
+		if($(this).is(':checked')) {
+			$('.radio_check_input').parent().removeClass('checked_mod');
+			$(this).parent().addClass('checked_mod');
+		}
+	});
+
+	// rezerv_quantity
+	$('.quantity_form').on('click', '.js_qty_plus', function(e) {
+		e.preventDefault();
+		fieldName = $(this).parent('.quantity_form').children('.js_qty_plus').attr('field');
+		var currentVal = parseInt($(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val());
+		if (!isNaN(currentVal)) {
+			$(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val(currentVal + 1);
+		} else {
+			$(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val(0);
+		}
+	});
+
+	$('.quantity_form').on('click', '.js_qty_minus', function(e) {
+		e.preventDefault();
+		fieldName = $(this).parent('.quantity_form').children('.js_qty_minus').attr('field');
+		var currentVal = parseInt($(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val());
+		if (!isNaN(currentVal) && currentVal > 0) {
+			$(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val(currentVal - 1);
+		} else {
+			$(this).parent('.quantity_form').children('input[name=' + fieldName + ']').val(0);
+		}
+	});
+
+	// card slider
+	$fotoSlider.slick({
+		infinite: true,
+		// autoplay: true,
+		autoplaySpeed: 3000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		dots: false,
+		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+		asNavFor: '.slider_thumb',
+		touchThreshold: 100,
+		speed: 900,
+		draggable: true
+	});
+
+	$thumbSlider.slick({
+		infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		arrows: true,
+		vertical: true,
+		dots: false,
+		asNavFor: '.slider_foto',
+		prevArrow: "<span class='arrow_btn foto_prev'></span>",
+		nextArrow: "<span class='arrow_btn foto_next'></span>",
+		focusOnSelect: true
+	});
 
 	//developer funcitons
-	pageWidget(['index', 'about', 'gallery', 'album', 'rezerv']);
+	pageWidget(['index', 'about', 'gallery', 'album', 'rezerv', 'card']);
 	getAllClasses('html','.elements_list');
 });
 
